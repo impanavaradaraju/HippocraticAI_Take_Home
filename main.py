@@ -14,9 +14,9 @@ age-appropriate for 5-10-year-olds.
 """
 
 def call_model(prompt: str, max_tokens=3000, temperature=0.2) -> str:
-    openai.api_key = os.getenv("OPENAI_API_KEY")  # Your key in environment
+    openai.api_key = os.getenv("OPENAI_API_KEY")  
     resp = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",  # DO NOT CHANGE THIS
+        model="gpt-3.5-turbo",  
         messages=[{"role": "user", "content": prompt}],
         stream=False,
         max_tokens=max_tokens,
@@ -103,7 +103,7 @@ def refine_story(request: str, max_rounds=2):
     return story, judge_data
 
 
-#Extra
+#Extra Addition
 REFLECTION_PROMPT = """
 Create a 'Reflection Card' for the following bedtime story:
 
